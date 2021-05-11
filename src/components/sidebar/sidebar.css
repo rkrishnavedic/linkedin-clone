@@ -30,6 +30,9 @@
 .sidebar-top .user-avatar{
     height: 72px;
     width: 72px;
+    object-fit: contain;
+    border-radius: 1000px;
+    margin-bottom: 10px;
     border: 2px solid white;
 }
 

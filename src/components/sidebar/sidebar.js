@@ -1,9 +1,9 @@
-import { Avatar } from '@material-ui/core';
 import React from 'react';
 import './sidebar.css';
 import BookmarkRoundedIcon from '@material-ui/icons/BookmarkRounded';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/userSlice';
+import noAvatarSvg from './user.png';
 
 const RecentTopic=(topic)=>{
     return (
@@ -24,7 +24,7 @@ const Sidebar=()=>{
 
             <div className="sidebar-top">
                 <img src={user.background? user.background: 'https://miro.medium.com/max/2248/1*92adf06PCF91kCYu1nPLQg.jpeg'} alt="background"/>
-                <Avatar src={user.photoUrl} className="user-avatar"/>
+                <img alt='profile-pic' src={user.photoUrl? user.photoUrl:noAvatarSvg} className="user-avatar"/>
                 <h3>{user.displayName}</h3>
                 <h4>{user.desc}</h4>
             </div>
