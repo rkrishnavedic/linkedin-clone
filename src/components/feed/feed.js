@@ -57,7 +57,7 @@ const Feed = ()=>{
                     <div className="feed-input">
                         <form onSubmit={addPost}>
                             <input value={postInputText} onChange={(e)=>setPostInputText(e.target.value)} type="text" placeholder="Start a post"/>
-                            <button>Send</button>
+                            <button onSubmit={addPost}>Send</button>
                         </form>
                     </div>
                 </div>
