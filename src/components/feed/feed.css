@@ -1,0 +1,53 @@
+.feed{
+    width: 540px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.feed-input-container{
+    padding: 10px;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    width: 100%;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+}
+
+.feed-avatar{
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+}
+
+.feed-input{
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    display: flex;
+    padding: 10px;
+    color: gray;
+    margin-bottom:10px;
+    width: 100%;
+    place-items: center;
+}
+
+.feed-input input{
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    outline-width: 0;
+    font-size:13px;
+    font-weight: 600;
+}
+
+.feed-input button{
+    display: none;
+}
+
+.feed-input-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

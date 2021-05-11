@@ -1,0 +1,159 @@
+.sidebar{
+    position: sticky;
+    top: 100px;
+    width: 225px;
+    border-radius: 10px;
+    text-align: center;
+    height: fit-content;
+}
+
+.sidebar-top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: white;
+    padding-bottom: 10px;
+}
+
+.sidebar-top img{
+    margin-bottom: -35px;
+    width: 100%;
+    height: 54px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.sidebar-top .user-avatar{
+    height: 72px;
+    width: 72px;
+    border: 2px solid white;
+}
+
+.sidebar-top h3{
+    font-size: 16px;
+    padding-top: 15px;
+}
+
+.sidebar-top h4{
+    padding-top: 5px;
+    font-size: 13px;
+    color: rgb(90, 90, 90);
+    font-weight: 350;
+}
+
+.sidebar-stats{
+    background-color: white;
+    border: 1px solid lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebar-stat{
+    padding:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display:flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.sidebar-stat:hover{
+    background-color: lightgray;
+}
+
+.sidebar-stat p{
+    color: rgb(102, 102, 102);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.sidebar-stat-num{
+    font-weight: 800;
+    color: #0a66c2 !important;
+}
+
+.sidebar-myitems{
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-top:0;
+    display: flex;
+    place-items: center;
+    justify-content: left;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    color: rgb(85, 85, 85);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.sidebar-myitems:hover{
+    background-color: lightgray;
+}
+
+
+.sidebar-bottom{
+    text-align: left;
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 10px;
+    margin-top:10px;
+}
+
+.sidebar-recent-topic{
+    display: flex;
+    font-size: 13px;
+    font-weight: bolder;
+    color: gray;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.sidebar-bottom .recent-heading{
+    padding: 10px;
+    font-size: 13px;
+}
+
+.sidebar-recent-topic .topic-hash{
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.sidebar-recent-topic:hover{
+    background-color: whitesmoke;
+    cursor:pointer;
+    color: black;
+}
+
+.sidebar-bottom .discover-more{
+    padding: 10px;
+    background-color: white;
+    margin-top:10px;
+    border-top:1px solid lightgray;
+    display: flex;
+    place-items: center;
+    justify-content: left;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: rgb(58, 57, 57);
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.discover-more p{
+    font-size:14px;
+    text-align: center;
+    color: gray;
+    margin: auto;
+}
+
+.discover-more:hover{
+    background-color: lightgray;
+}
