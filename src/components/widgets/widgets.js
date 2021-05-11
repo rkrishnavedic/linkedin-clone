@@ -27,7 +27,7 @@ const Widgets = ()=>{
     return(
         <div className="widgets">
             <div className="widgets-header">
-                <h3>LinkedIn News</h3>
+                <h3>SyncedIn News</h3>
             </div>
             
             {newsArticle("4.03 lakh new cases, 4092 deaths","Top news • 26,851 readers ")}
