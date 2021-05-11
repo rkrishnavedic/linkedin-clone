@@ -23,13 +23,13 @@ const Login=()=>{
         setPasswordError('');
     }
 
-    const Signin=(e)=>{
+    const Signin= (e)=>{
         e.preventDefault();
 
         auth.signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                console.log(userCredential.user);
-                clearInputs();
+                // console.log(userCredential.user);
+                // clearInputs();
                 // userCredential.user.updateProfile({
                 //     displayName: 'Admin r.krishna',
                 //     photoURL: 'https://media-exp1.licdn.com/dms/image/C5603AQFdcyUklXulcw/profile-displayphoto-shrink_400_400/0/1619087988727?e=1626307200&v=beta&t=MhkILw1SmFbBvS5aaddtQ0Nh2t9xLHrYD_7KUqmzUSw',

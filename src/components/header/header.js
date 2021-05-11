@@ -8,9 +8,10 @@ import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
 import React, { useState } from 'react';
 import HeaderOption from '../headeroption/headeroption';
 import './header.css';
-import {useDispatch, useSelector} from 'react-redux';
-import {logout, selectUser} from '../../features/userSlice';
+import {useSelector} from 'react-redux';
+import {selectUser} from '../../features/userSlice';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { auth } from '../../firebase/firebase';
 
 const Header = ()=>{
 
@@ -18,10 +19,8 @@ const Header = ()=>{
 
     const user = useSelector(selectUser);
 
-    const dispatch = useDispatch();
-
     const handleSignout=()=>{
-        dispatch(logout());
+        auth.signOut();
     }
 
     const Dropdown = ()=>{
