@@ -8,7 +8,12 @@
 }
 
 .login-center-container{
-    margin-top: 100px;
+    margin-top: 80px;
+}
+
+.login-center-container img{
+    width: 110px;
+    object-fit: contain;
 }
 
 .login-center-container img{

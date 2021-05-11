@@ -74,9 +74,9 @@ const Feed = ()=>{
             <hr style={{width:'103.5%',border:'0.1px solid lightgray',marginTop:'15px', marginBottom:'5px'}}/>
 
             {
-                posts.map(({id, data:{username, desc, message, photoUrl}})=>{
+                posts.map(({id, data})=>{
                     return(
-                        <Post name={username} description={desc} photoUrl={photoUrl} message={message} key={id}/>
+                        <Post data={data} key={id}/>
                     )
                 })
             }

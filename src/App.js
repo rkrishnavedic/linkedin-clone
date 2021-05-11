@@ -19,7 +19,7 @@ function App() {
       if(authUser){
         console.log('auth');
 
-        const userRef = db.collection('user').doc(`${authUser.uid}`)
+        db.collection('user').doc(`${authUser.uid}`)
                     .get()
                     .then((doc)=>{
                       const dataObj = doc.data();

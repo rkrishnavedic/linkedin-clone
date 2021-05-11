@@ -23,11 +23,21 @@
 .post-info p{
     font-size: 12px;
     color: gray;
+    display: flex;
+    justify-content: left;
 }
 
 .post-body {
     overflow-wrap: anywhere;
     padding-bottom: 10px;
+}
+
+.post-body p{
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(27, 27, 27);
+    
 }
 
 .post-options{

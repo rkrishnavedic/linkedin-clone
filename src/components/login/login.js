@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './login.css';
-import loginSvg from './login.svg';
+import loginSvg from './syncedin.png';
 import TextField from '@material-ui/core/TextField';
 import {auth} from '../../firebase/firebase';
 
