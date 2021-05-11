@@ -28,8 +28,14 @@ const Login=()=>{
 
         auth.signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                console.log(userCredential);
+                console.log(userCredential.user);
                 clearInputs();
+                // userCredential.user.updateProfile({
+                //     displayName: 'Admin r.krishna',
+                //     photoURL: 'https://media-exp1.licdn.com/dms/image/C5603AQFdcyUklXulcw/profile-displayphoto-shrink_400_400/0/1619087988727?e=1626307200&v=beta&t=MhkILw1SmFbBvS5aaddtQ0Nh2t9xLHrYD_7KUqmzUSw',
+                //     backgroundURL: 'https://media-exp1.licdn.com/dms/image/C4D16AQENhsTp2LhY4w/profile-displaybackgroundimage-shrink_350_1400/0/1619000275891?e=1626307200&v=beta&t=UJYExsuIHpx7WsNHGE7GpiXpa3Jkh5bfcuHfWvN4mMk',
+                //     description: 'Upcoming blah blah, Learning ReactJS DEO at SyncedIn Inc.'
+                // })
             })
             .catch(err=>{
                 switch (err.code) {

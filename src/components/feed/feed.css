@@ -16,19 +16,14 @@
     border: 1px solid lightgray;
 }
 
-.feed-avatar{
-    width: 48px;
-    height: 48px;
-    margin-right: 10px;
-}
-
 .feed-input{
     border: 1px solid lightgray;
     border-radius: 30px;
     display: flex;
-    padding: 10px;
-    color: gray;
+    padding-left: 10px;
+    color: rgb(77, 77, 77);
     margin-bottom:10px;
+    height: 48px !important;
     width: 100%;
     place-items: center;
 }
@@ -37,8 +32,10 @@
     border: none;
     outline: none;
     margin-left: 10px;
-    outline-width: 0;
-    font-size:13px;
+    font-size:14px;
+    width: 90%;
+    overflow: scroll;
+    color: rgb(59, 59, 59);
     font-weight: 600;
 }
 

@@ -41,3 +41,35 @@
     display: flex;
     object-fit: contain;
 }
+
+.dropdown-container{
+    position: relative;
+    top: 70px;
+    right: 310px;
+}
+
+.dropdown-menu{
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 264px;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border: 1px solid lightgray;
+    z-index: 5000;
+}
+
+.dropdown-menu .menu-user{
+    padding: 10px;
+}
+
+.dropdown-menu .menu-signout{
+    padding: 10px;
+    border-top: 1px solid lightgray;
+    cursor: pointer;
+    color: rgb(87, 87, 87);
+}
+
+.menu-signout:hover{
+    text-decoration: underline;
+}

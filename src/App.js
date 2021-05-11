@@ -6,7 +6,9 @@ import Header from './components/header/header';
 import Sidebar from './components/sidebar/sidebar';
 import {logout, login,selectUser} from './features/userSlice';
 import Login from './components/login/login';
-import {auth} from './firebase/firebase';
+import {auth, db} from './firebase/firebase';
+import Widgets from './components/widgets/widgets';
+
 function App() {
 
   const user = useSelector(selectUser); 
@@ -16,12 +18,22 @@ function App() {
     auth.onAuthStateChanged(authUser=>{
       if(authUser){
         console.log('auth');
-        dispatch(login({
-          email: authUser.email,
-          uid: authUser.uid,
-          displayName: authUser.displayName,
-          photoUrl: authUser.photoURL
-        }))
+
+        const userRef = db.collection('user').doc(`${authUser.uid}`)
+                    .get()
+                    .then((doc)=>{
+                      const dataObj = doc.data();
+                      dispatch(login({
+                        email: authUser.email,
+                        uid: authUser.uid,
+                        background: dataObj.backgroundURL,
+                        desc: dataObj.bio,
+                        displayName: dataObj.displayName,
+                        photoUrl: dataObj.photoURL
+                      }))
+                    })
+
+       
       }else{
         dispatch(logout())
       }
@@ -39,6 +51,7 @@ function App() {
       <div className="app-body">
         <Sidebar/>
         <Feed/>
+        <Widgets/>
       </div>
       </>
       }

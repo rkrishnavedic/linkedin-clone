@@ -12,7 +12,7 @@ const Post = ({name, description, message, photoUrl})=>{
     return(
         <div className="post">
             <div className="post-header">
-                    <Avatar src={photoUrl}/>
+                    <Avatar style={{width: '48px', height:'48px'}} src={photoUrl}/>
                 <div className="post-info">
                     <h3>{name}</h3>
                     <p>{description}</p>

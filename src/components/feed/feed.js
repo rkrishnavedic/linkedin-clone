@@ -8,10 +8,14 @@ import EventRoundedIcon from '@material-ui/icons/EventRounded';
 import VerticalSplitRoundedIcon from '@material-ui/icons/VerticalSplitRounded';
 import Post from '../post/post';
 import {db, timestamp} from '../../firebase/firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../features/userSlice';
 
 const Feed = ()=>{
     const [posts, setPosts] = useState([]);
     const [postInputText, setPostInputText] = useState(''); 
+
+    const user = useSelector(selectUser);
 
     useEffect(()=>{
         db.collection('posts')
@@ -28,15 +32,20 @@ const Feed = ()=>{
     },[]);
 
     const addPost = (e)=>{
+
         e.preventDefault();
+
+        if(postInputText){
         db.collection('posts').add({
-            username: 'Pooja',
-            description: 'SDE at Microsofl',
+            username: user.displayName,
+            desc: user.desc,
             message: postInputText,
+            photoUrl: user.photoUrl,
             timestamp: timestamp,
         })
 
         setPostInputText('');
+        }
     }
 
     return(
@@ -44,7 +53,7 @@ const Feed = ()=>{
 
             <div className="feed-input-container">
                 <div style={{display:'flex',flexDirection:'row'}}>
-                    <Avatar className="feed-avatar"/>
+                    <Avatar src ={user.photoUrl} style={{marginRight: '10px', width:'48px', height:'48px'}}/>
                     <div className="feed-input">
                         <form onSubmit={addPost}>
                             <input value={postInputText} onChange={(e)=>setPostInputText(e.target.value)} type="text" placeholder="Start a post"/>
@@ -65,9 +74,9 @@ const Feed = ()=>{
             <hr style={{width:'103.5%',border:'0.1px solid lightgray',marginTop:'15px', marginBottom:'5px'}}/>
 
             {
-                posts.map(({id, data:{username, description, message, photoUrl}})=>{
+                posts.map(({id, data:{username, desc, message, photoUrl}})=>{
                     return(
-                        <Post name={username} description={description} message={message} key={id}/>
+                        <Post name={username} description={desc} photoUrl={photoUrl} message={message} key={id}/>
                     )
                 })
             }

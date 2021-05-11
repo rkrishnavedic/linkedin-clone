@@ -5,15 +5,39 @@ import SmsRoundedIcon from '@material-ui/icons/SmsRounded';
 import BusinessCenterRoundedIcon from '@material-ui/icons/BusinessCenterRounded';
 import NotificationsRoundedIcon from '@material-ui/icons/NotificationsRounded';
 import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
-import React from 'react';
+import React, { useState } from 'react';
 import HeaderOption from '../headeroption/headeroption';
 import './header.css';
-import {useDispatch} from 'react-redux';
-import {logout} from '../../features/userSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {logout, selectUser} from '../../features/userSlice';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const Header = ()=>{
 
+    const [userDropdown, setUserDropdown] = useState(false);
+
+    const user = useSelector(selectUser);
+
     const dispatch = useDispatch();
+
+    const handleSignout=()=>{
+        dispatch(logout());
+    }
+
+    const Dropdown = ()=>{
+        return(
+            <div className="dropdown-container">
+                <div className="dropdown-menu">
+                    <div className="menu-user">
+                        Some Info about user
+                    </div>
+                    <div onClick={handleSignout} className="menu-signout">
+                        Sign out
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
     return(
         <div className="header-container">
@@ -30,8 +54,10 @@ const Header = ()=>{
                 <HeaderOption Icon={BusinessCenterRoundedIcon} title="Jobs"/>    
                 <HeaderOption Icon={SmsRoundedIcon} title="Messaging"/>    
                 <HeaderOption Icon={NotificationsRoundedIcon} title="Notifications"/> 
-                <span onClick={()=>dispatch(logout())}><HeaderOption avatar="https://randomuser.me/api/portraits/women/81.jpg" title="Me"/>
+                <span onClick={()=>setUserDropdown(!userDropdown)}><HeaderOption TextIcon={ArrowDropDownIcon} avatar={user.photoUrl? user.photoUrl: "none"} title="Me"/>
                 </span>
+                
+                {userDropdown && <Dropdown/>}
 
                 <HeaderOption />
                 <hr className="option-divider"/>
